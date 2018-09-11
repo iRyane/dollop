@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cx.bank.model">
+    <class name="com.cx.bank.model.UserBean" table="user">
+        <id name="id">
+            <generator class="foreign">
+                <param name="property">moneyBean</param>
+            </generator>
+        </id>
+        <property name="name" unique="true"/>
+        <property name="password"/>
+        <one-to-one name="moneyBean" constrained="true"/>
+    </class>
+
+</hibernate-mapping>
